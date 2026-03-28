@@ -3,7 +3,10 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-  reporter: 'html',
+  /* Explicitly setting the reporter to HTML and defining the output folder 
+     ensures Jenkins knows exactly where to look.
+  */
+  reporter: [['html', { outputFolder: 'playwright-report' }]],
   use: {
     trace: 'on-first-retry',
   },
