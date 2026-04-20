@@ -15,7 +15,7 @@ pipeline {
 
         stage('Run Smoke Tests') {
             steps {
-                bat 'npx playwright test --project=chromium || exit 0'
+                bat 'npx playwright test --project=chromium'
             }
         }
     }
